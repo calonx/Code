@@ -1,0 +1,3 @@
+<pproj>
+    <include path="Projects\Services.pproj"/>
+</pproj>

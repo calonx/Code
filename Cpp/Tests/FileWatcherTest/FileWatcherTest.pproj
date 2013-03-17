@@ -1,0 +1,9 @@
+<pproj>
+    <project name="FileWatcherTest" type="exe" language="C++" location=".">
+        <dir include="." recurse="true"/>
+        <dep project=""/>
+    </project>
+    <solution name="FileWatcherTest" output="FileWatcherTest">
+        <dep project="FileWatcherTest"/>
+    </solution>
+</pproj>

@@ -1,0 +1,7 @@
+
+
+interface IFileWatcher {
+    
+};
+
+IFileWatcher * FileWatcherCreate ();

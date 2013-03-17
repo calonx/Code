@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="FileWatcher"
+	ProjectGUID="30285926-2233-300c-2627-1128331a0a18">
+	<Platforms>
+		<Platform
+			Name="x64" />
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|x64"
+			OutputDirectory="$(SolutionDir)"
+			IntermediateDirectory="$(TEMP)\VsIntermediate\2008\$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="1"
+			WholeProgramOptimization="No">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				EnableIntrinsicFunctions="false"
+				EnableFunctionLevelLinking="false"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				WarningLevel="4"
+				DebugInformationFormat="3"
+				UsePrecompiledHeader="1"
+				PrecompiledHeaderThrough="Pch.h" />
+			<Tool
+				Name="VCLinkerTool"
+				GenerateDebugInformation="true"
+				OptimizeReferences="0"
+				EnableCOMDATFolding="0"
+				TargetMachine="17" />
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)"
+			IntermediateDirectory="$(TEMP)\VsIntermediate\2008\$(ConfigurationName)"
+			ConfigurationType="4"
+			CharacterSet="1"
+			WholeProgramOptimization="LinkTimeCodeGeneration">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				EnableIntrinsicFunctions="true"
+				EnableFunctionLevelLinking="true"
+				MinimalRebuild="false"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="2"
+				WarningLevel="4"
+				DebugInformationFormat="3"
+				UsePrecompiledHeader="1"
+				PrecompiledHeaderThrough="Pch.h" />
+			<Tool
+				Name="VCLinkerTool"
+				GenerateDebugInformation="true"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="17" />
+		</Configuration>
+	</Configurations>
+	<Files>
+		<File
+			RelativePath="..\..\Services\FileWatcher\FileWatcher.cpp">
+			<FileConfiguration
+				Name="Debug|x64">
+				<Tool
+					Name="VCCLCompilerTool"
+					CreatePrecompiledHeader="1" />
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|x64">
+				<Tool
+					Name="VCCLCompilerTool"
+					CreatePrecompiledHeader="1" />
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="..\..\Services\FileWatcher\FileWatcher.h" />
+		<File
+			RelativePath="..\..\Services\FileWatcher\Pch.h" />
+	</Files>
+</VisualStudioProject>

@@ -1,0 +1,5 @@
+C:\Code\Cpp\Tools\PProj\obj\Debug\ResolveAssemblyReference.cache
+C:\Code\Cpp\Tools\PProj\bin\Debug\PProj.exe
+C:\Code\Cpp\Tools\PProj\bin\Debug\PProj.pdb
+C:\Code\Cpp\Tools\PProj\obj\Debug\PProj.exe
+C:\Code\Cpp\Tools\PProj\obj\Debug\PProj.pdb

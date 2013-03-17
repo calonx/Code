@@ -1,0 +1,8 @@
+<pproj>
+    <project name="GraphicsTest" type="exe" language="C++">
+        <dep project="Graphics"/>
+    </project>
+    <solution name="GraphicsTest" output="GraphicsTest">
+        <dep project="GraphicsTest"/>
+    </solution>
+</pproj>

@@ -1,0 +1,34 @@
+<pproj>
+    <project name="Types" type="lib" language="C++" location="..\Services\Types">
+        <dir include="." recurse="true"/>
+        <require header="Types.h"/>
+    </project>
+    <project name="Math" type="lib" language="C++" location="..\Services\Math">
+        <dir include="." recurse="true"/>
+        <dep project="Types"/>
+        <require header="Math.h"/>
+    </project>
+    <project name="File" type="lib" language="C++" location="..\Services\File">
+        <dir include="." recurse="true"/>
+        <dep project="Types"/>
+        <require header="File.h"/>
+    </project>
+    <project name="FileWatcher" type="lib" language="C++" location="..\Services\FileWatcher">
+        <dir include="." recurse="true"/>
+        <require header="FileWatcher.h"/>
+    </project>
+    <project name="Graphics" type="lib" language="C++" location="..\Services\Graphics">
+        <dir include="."/>
+        <dir include="Model"/>
+        <dep project="Math"/>
+        <dep project="File"/>
+        <require header="Graphics.h"/>
+    </project>
+    <project name="Voxel" type="lib" language="C++" location="..\Services\Voxel">
+        <dir include="." recurse="true"/>
+        <dep project="Graphics"/>
+        <dep project="File"/>
+        <require header="Voxel.h"/>
+        <require header="VoxelTypes.h"/>
+    </project>
+</pproj>
