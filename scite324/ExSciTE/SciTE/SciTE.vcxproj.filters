@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Properties">
+      <UniqueIdentifier>{9586f35f-5c2e-4fa8-9d1b-378e33be7720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua">
+      <UniqueIdentifier>{dd9b7dae-91d1-4c38-930c-6baf11a16a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua\lib">
+      <UniqueIdentifier>{8d2a52a9-97c1-4873-9657-fc6988371059}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\scite\src\Cookie.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\Credits.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\Exporters.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\FilePath.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\FileWorker.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\IFaceTable.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\JobQueue.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\LuaExtension.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\MultiplexExtension.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\PropSetFile.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\SciTEBase.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\SciTEBuffers.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\SciTEIO.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\SciTEProps.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\StringHelpers.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\StringList.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\StyleWriter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\src\Utf8_16.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\win32\DirectorExtension.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\win32\GUIWin.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\win32\SciTEWin.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\win32\SciTEWinBar.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\win32\SciTEWinDlg.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\win32\UniqueInstance.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\win32\WinMutex.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lapi.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lcode.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\ldebug.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\ldo.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\ldump.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lfunc.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lgc.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\llex.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lmem.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lobject.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lopcodes.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lparser.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lstate.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lstring.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\ltable.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\ltm.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lundump.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lvm.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lzio.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\lauxlib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\lbaselib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\ldblib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\linit.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\liolib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\lmathlib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\loadlib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\loslib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\lstrlib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\scite\lua\src\lib\ltablib.c">
+      <Filter>lua\lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\scite\src\Cookie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\Extender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\FilePath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\FileWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\GUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\IFaceTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\JobQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\LuaExtension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\MultiplexExtension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\Mutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\PropSetFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\SciTE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\scite_lua_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\SciTEBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\SciTEKeys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\SString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\StringHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\StringList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\StripDefinition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\StyleWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\Utf8_16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\src\Worker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\win32\DirectorExtension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\win32\SciTEWin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\win32\UniqueInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\include\lauxlib.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\include\lua.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\include\luaconf.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\include\lualib.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lapi.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lcode.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\ldebug.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\ldo.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lfunc.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lgc.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\llex.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\llimits.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lmem.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lobject.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lopcodes.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lparser.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lstate.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lstring.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\ltable.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\ltm.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lundump.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lvm.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\scite\lua\src\lzio.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\scite\win32\SciTERes.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\scite\win32\around.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\scite\win32\backslash.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\scite\win32\case.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\scite\win32\closefile.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\scite\win32\regex.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\scite\win32\up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\scite\win32\word.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\scite\src\abaqus.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\abbrev.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\ada.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\asm.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\asn1.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\au3.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\ave.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\avs.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\baan.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\blitzbasic.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\bullant.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\caml.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\cmake.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\cobol.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\conf.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\cpp.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\csound.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\css.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\d.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\ecl.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\eiffel.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\Embedded.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\erlang.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\escript.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\flagship.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\forth.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\fortran.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\freebasic.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\gap.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\haskell.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\html.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\inno.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\kix.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\latex.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\lisp.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\lot.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\lout.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\lua.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\matlab.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\metapost.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\mmixal.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\modula3.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\nimrod.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\nncrontab.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\nsis.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\opal.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\oscript.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\others.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\pascal.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\perl.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\pov.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\powerpro.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\powershell.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\ps.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\purebasic.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\python.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\r.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\rebol.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\ruby.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\SciTE.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\SciTEGlobal.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\scriptol.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\smalltalk.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\sorcins.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\specman.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\spice.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\sql.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\tacl.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\tal.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\tcl.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\tex.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\txt2tags.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\vb.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\verilog.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\vhdl.properties">
+      <Filter>Properties</Filter>
+    </None>
+    <None Include="..\..\scite\src\yaml.properties">
+      <Filter>Properties</Filter>
+    </None>
+  </ItemGroup>
+</Project>

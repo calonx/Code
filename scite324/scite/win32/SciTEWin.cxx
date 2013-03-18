@@ -517,7 +517,7 @@ void SciTEWin::CopyAsRTF() {
 			}
 			fclose(fp);
 		}
-		unlink(fileNameTemp);
+		_unlink(fileNameTemp);
 		free(fileNameTemp);
 	}
 }

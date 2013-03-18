@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DF613B78-E142-4654-A106-6A123D649BD7}</ProjectGuid>
+    <RootNamespace>SciTE</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\bin\</OutDir>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)</TargetName>
+    <OutDir>$(SolutionDir)\bin\</OutDir>
+    <IntDir>$(SolutionDir)\obj\$(Configuration)_$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\bin\</OutDir>
+    <IntDir>$(SolutionDir)\obj\$(Configuration)_$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\scite\src;..\..\scite\include;..\..\scite\lua\include;..\..\scintilla\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\scite\src;..\..\scite\include;..\..\scite\lua\include;..\..\scintilla\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DISABLE_THEMES;_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>Comctl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\bin</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\scite\src</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\scite\src;..\..\scite\include;..\..\scite\lua\include;..\..\scintilla\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\scite\src;..\..\scite\include;..\..\scite\lua\include;..\..\scintilla\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DISABLE_THEMES;_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>Comctl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\bin</AdditionalLibraryDirectories>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\scite\src</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+    <None Include="..\..\scite\src\abaqus.properties" />
+    <None Include="..\..\scite\src\abbrev.properties" />
+    <None Include="..\..\scite\src\ada.properties" />
+    <None Include="..\..\scite\src\asm.properties" />
+    <None Include="..\..\scite\src\asn1.properties" />
+    <None Include="..\..\scite\src\au3.properties" />
+    <None Include="..\..\scite\src\ave.properties" />
+    <None Include="..\..\scite\src\avs.properties" />
+    <None Include="..\..\scite\src\baan.properties" />
+    <None Include="..\..\scite\src\blitzbasic.properties" />
+    <None Include="..\..\scite\src\bullant.properties" />
+    <None Include="..\..\scite\src\caml.properties" />
+    <None Include="..\..\scite\src\cmake.properties" />
+    <None Include="..\..\scite\src\cobol.properties" />
+    <None Include="..\..\scite\src\conf.properties" />
+    <None Include="..\..\scite\src\cpp.properties" />
+    <None Include="..\..\scite\src\csound.properties" />
+    <None Include="..\..\scite\src\css.properties" />
+    <None Include="..\..\scite\src\d.properties" />
+    <None Include="..\..\scite\src\ecl.properties" />
+    <None Include="..\..\scite\src\eiffel.properties" />
+    <None Include="..\..\scite\src\Embedded.properties" />
+    <None Include="..\..\scite\src\erlang.properties" />
+    <None Include="..\..\scite\src\escript.properties" />
+    <None Include="..\..\scite\src\flagship.properties" />
+    <None Include="..\..\scite\src\forth.properties" />
+    <None Include="..\..\scite\src\fortran.properties" />
+    <None Include="..\..\scite\src\freebasic.properties" />
+    <None Include="..\..\scite\src\gap.properties" />
+    <None Include="..\..\scite\src\haskell.properties" />
+    <None Include="..\..\scite\src\html.properties" />
+    <None Include="..\..\scite\src\inno.properties" />
+    <None Include="..\..\scite\src\kix.properties" />
+    <None Include="..\..\scite\src\latex.properties" />
+    <None Include="..\..\scite\src\lisp.properties" />
+    <None Include="..\..\scite\src\lot.properties" />
+    <None Include="..\..\scite\src\lout.properties" />
+    <None Include="..\..\scite\src\lua.properties" />
+    <None Include="..\..\scite\src\matlab.properties" />
+    <None Include="..\..\scite\src\metapost.properties" />
+    <None Include="..\..\scite\src\mmixal.properties" />
+    <None Include="..\..\scite\src\modula3.properties" />
+    <None Include="..\..\scite\src\nimrod.properties" />
+    <None Include="..\..\scite\src\nncrontab.properties" />
+    <None Include="..\..\scite\src\nsis.properties" />
+    <None Include="..\..\scite\src\opal.properties" />
+    <None Include="..\..\scite\src\oscript.properties" />
+    <None Include="..\..\scite\src\others.properties" />
+    <None Include="..\..\scite\src\pascal.properties" />
+    <None Include="..\..\scite\src\perl.properties" />
+    <None Include="..\..\scite\src\pov.properties" />
+    <None Include="..\..\scite\src\powerpro.properties" />
+    <None Include="..\..\scite\src\powershell.properties" />
+    <None Include="..\..\scite\src\ps.properties" />
+    <None Include="..\..\scite\src\purebasic.properties" />
+    <None Include="..\..\scite\src\python.properties" />
+    <None Include="..\..\scite\src\r.properties" />
+    <None Include="..\..\scite\src\rebol.properties" />
+    <None Include="..\..\scite\src\ruby.properties" />
+    <None Include="..\..\scite\src\SciTE.properties" />
+    <None Include="..\..\scite\src\SciTEGlobal.properties" />
+    <None Include="..\..\scite\src\scriptol.properties" />
+    <None Include="..\..\scite\src\smalltalk.properties" />
+    <None Include="..\..\scite\src\sorcins.properties" />
+    <None Include="..\..\scite\src\specman.properties" />
+    <None Include="..\..\scite\src\spice.properties" />
+    <None Include="..\..\scite\src\sql.properties" />
+    <None Include="..\..\scite\src\tacl.properties" />
+    <None Include="..\..\scite\src\tal.properties" />
+    <None Include="..\..\scite\src\tcl.properties" />
+    <None Include="..\..\scite\src\tex.properties" />
+    <None Include="..\..\scite\src\txt2tags.properties" />
+    <None Include="..\..\scite\src\vb.properties" />
+    <None Include="..\..\scite\src\verilog.properties" />
+    <None Include="..\..\scite\src\vhdl.properties" />
+    <None Include="..\..\scite\src\yaml.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\scite\src\abaqus.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\abbrev.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\ada.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\asm.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\asn1.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\au3.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\ave.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\avs.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\baan.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\blitzbasic.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\bullant.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\caml.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\cmake.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\cobol.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\conf.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\cpp.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\csound.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\css.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\d.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\ecl.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\eiffel.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\Embedded.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\erlang.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\escript.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\flagship.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\forth.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\fortran.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\freebasic.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\gap.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\haskell.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\html.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\inno.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\kix.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\latex.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\lisp.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\lot.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\lout.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\lua.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\matlab.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\metapost.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\mmixal.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\modula3.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\nimrod.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\nncrontab.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\nsis.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\opal.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\oscript.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\others.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\pascal.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\perl.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\pov.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\powerpro.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\powershell.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\ps.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\purebasic.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\python.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\r.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\rebol.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\ruby.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\SciTE.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\SciTEGlobal.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\scriptol.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\smalltalk.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\sorcins.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\specman.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\spice.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\sql.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\tacl.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\tal.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\tcl.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\tex.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\txt2tags.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\vb.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\verilog.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\vhdl.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\scite\src\yaml.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\scite\lua\src\lapi.c" />
+    <ClCompile Include="..\..\scite\lua\src\lcode.c" />
+    <ClCompile Include="..\..\scite\lua\src\ldebug.c" />
+    <ClCompile Include="..\..\scite\lua\src\ldo.c" />
+    <ClCompile Include="..\..\scite\lua\src\ldump.c" />
+    <ClCompile Include="..\..\scite\lua\src\lfunc.c" />
+    <ClCompile Include="..\..\scite\lua\src\lgc.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\lauxlib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\lbaselib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\ldblib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\linit.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\liolib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\lmathlib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\loadlib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\loslib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\lstrlib.c" />
+    <ClCompile Include="..\..\scite\lua\src\lib\ltablib.c" />
+    <ClCompile Include="..\..\scite\lua\src\llex.c" />
+    <ClCompile Include="..\..\scite\lua\src\lmem.c" />
+    <ClCompile Include="..\..\scite\lua\src\lobject.c" />
+    <ClCompile Include="..\..\scite\lua\src\lopcodes.c" />
+    <ClCompile Include="..\..\scite\lua\src\lparser.c" />
+    <ClCompile Include="..\..\scite\lua\src\lstate.c" />
+    <ClCompile Include="..\..\scite\lua\src\lstring.c" />
+    <ClCompile Include="..\..\scite\lua\src\ltable.c" />
+    <ClCompile Include="..\..\scite\lua\src\ltm.c" />
+    <ClCompile Include="..\..\scite\lua\src\lundump.c" />
+    <ClCompile Include="..\..\scite\lua\src\lvm.c" />
+    <ClCompile Include="..\..\scite\lua\src\lzio.c" />
+    <ClCompile Include="..\..\scite\src\Cookie.cxx" />
+    <ClCompile Include="..\..\scite\src\Credits.cxx" />
+    <ClCompile Include="..\..\scite\src\Exporters.cxx" />
+    <ClCompile Include="..\..\scite\src\FilePath.cxx" />
+    <ClCompile Include="..\..\scite\src\FileWorker.cxx" />
+    <ClCompile Include="..\..\scite\src\IFaceTable.cxx" />
+    <ClCompile Include="..\..\scite\src\JobQueue.cxx" />
+    <ClCompile Include="..\..\scite\src\LuaExtension.cxx" />
+    <ClCompile Include="..\..\scite\src\MultiplexExtension.cxx" />
+    <ClCompile Include="..\..\scite\src\PropSetFile.cxx" />
+    <ClCompile Include="..\..\scite\src\SciTEBase.cxx" />
+    <ClCompile Include="..\..\scite\src\SciTEBuffers.cxx" />
+    <ClCompile Include="..\..\scite\src\SciTEIO.cxx" />
+    <ClCompile Include="..\..\scite\src\SciTEProps.cxx" />
+    <ClCompile Include="..\..\scite\src\StringHelpers.cxx" />
+    <ClCompile Include="..\..\scite\src\StringList.cxx" />
+    <ClCompile Include="..\..\scite\src\StyleWriter.cxx" />
+    <ClCompile Include="..\..\scite\src\Utf8_16.cxx" />
+    <ClCompile Include="..\..\scite\win32\DirectorExtension.cxx" />
+    <ClCompile Include="..\..\scite\win32\GUIWin.cxx" />
+    <ClCompile Include="..\..\scite\win32\SciTEWin.cxx" />
+    <ClCompile Include="..\..\scite\win32\SciTEWinBar.cxx" />
+    <ClCompile Include="..\..\scite\win32\SciTEWinDlg.cxx" />
+    <ClCompile Include="..\..\scite\win32\UniqueInstance.cxx" />
+    <ClCompile Include="..\..\scite\win32\WinMutex.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\scite\lua\include\lauxlib.h" />
+    <ClInclude Include="..\..\scite\lua\include\lua.h" />
+    <ClInclude Include="..\..\scite\lua\include\luaconf.h" />
+    <ClInclude Include="..\..\scite\lua\include\lualib.h" />
+    <ClInclude Include="..\..\scite\lua\src\lapi.h" />
+    <ClInclude Include="..\..\scite\lua\src\lcode.h" />
+    <ClInclude Include="..\..\scite\lua\src\ldebug.h" />
+    <ClInclude Include="..\..\scite\lua\src\ldo.h" />
+    <ClInclude Include="..\..\scite\lua\src\lfunc.h" />
+    <ClInclude Include="..\..\scite\lua\src\lgc.h" />
+    <ClInclude Include="..\..\scite\lua\src\llex.h" />
+    <ClInclude Include="..\..\scite\lua\src\llimits.h" />
+    <ClInclude Include="..\..\scite\lua\src\lmem.h" />
+    <ClInclude Include="..\..\scite\lua\src\lobject.h" />
+    <ClInclude Include="..\..\scite\lua\src\lopcodes.h" />
+    <ClInclude Include="..\..\scite\lua\src\lparser.h" />
+    <ClInclude Include="..\..\scite\lua\src\lstate.h" />
+    <ClInclude Include="..\..\scite\lua\src\lstring.h" />
+    <ClInclude Include="..\..\scite\lua\src\ltable.h" />
+    <ClInclude Include="..\..\scite\lua\src\ltm.h" />
+    <ClInclude Include="..\..\scite\lua\src\lundump.h" />
+    <ClInclude Include="..\..\scite\lua\src\lvm.h" />
+    <ClInclude Include="..\..\scite\lua\src\lzio.h" />
+    <ClInclude Include="..\..\scite\src\Cookie.h" />
+    <ClInclude Include="..\..\scite\src\Extender.h" />
+    <ClInclude Include="..\..\scite\src\FilePath.h" />
+    <ClInclude Include="..\..\scite\src\FileWorker.h" />
+    <ClInclude Include="..\..\scite\src\GUI.h" />
+    <ClInclude Include="..\..\scite\src\IFaceTable.h" />
+    <ClInclude Include="..\..\scite\src\JobQueue.h" />
+    <ClInclude Include="..\..\scite\src\LuaExtension.h" />
+    <ClInclude Include="..\..\scite\src\MultiplexExtension.h" />
+    <ClInclude Include="..\..\scite\src\Mutex.h" />
+    <ClInclude Include="..\..\scite\src\PropSetFile.h" />
+    <ClInclude Include="..\..\scite\src\SciTE.h" />
+    <ClInclude Include="..\..\scite\src\SciTEBase.h" />
+    <ClInclude Include="..\..\scite\src\SciTEKeys.h" />
+    <ClInclude Include="..\..\scite\src\scite_lua_win.h" />
+    <ClInclude Include="..\..\scite\src\SString.h" />
+    <ClInclude Include="..\..\scite\src\StringHelpers.h" />
+    <ClInclude Include="..\..\scite\src\StringList.h" />
+    <ClInclude Include="..\..\scite\src\StripDefinition.h" />
+    <ClInclude Include="..\..\scite\src\StyleWriter.h" />
+    <ClInclude Include="..\..\scite\src\Utf8_16.h" />
+    <ClInclude Include="..\..\scite\src\Worker.h" />
+    <ClInclude Include="..\..\scite\win32\DirectorExtension.h" />
+    <ClInclude Include="..\..\scite\win32\SciTEWin.h" />
+    <ClInclude Include="..\..\scite\win32\UniqueInstance.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\scite\win32\SciTERes.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\scite\win32\around.bmp" />
+    <Image Include="..\..\scite\win32\backslash.bmp" />
+    <Image Include="..\..\scite\win32\case.bmp" />
+    <Image Include="..\..\scite\win32\closefile.bmp" />
+    <Image Include="..\..\scite\win32\regex.bmp" />
+    <Image Include="..\..\scite\win32\up.bmp" />
+    <Image Include="..\..\scite\win32\word.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
