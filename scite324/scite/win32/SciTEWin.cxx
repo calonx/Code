@@ -52,12 +52,22 @@
 
 #endif
 
-#ifdef STATIC_BUILD
-const GUI::gui_char appName[] = GUI_TEXT("Sc1");
-#elif _DEBUG
-const GUI::gui_char appName[] = GUI_TEXT("SciTE [Debug]");
+#ifdef _DEBUG
+#define TITLE_CONFIG GUI_TEXT("-- Debug")
 #else
-const GUI::gui_char appName[] = GUI_TEXT("SciTE");
+#define TITLE_CONFIG GUI_TEXT("")
+#endif
+
+#ifdef WIN32
+#define TITLE_PLATFORM GUI_TEXT("-32")
+#else
+#define TITLE_PLATFORM GUI_TEXT("-64")
+#endif
+
+#ifdef STATIC_BUILD
+const GUI::gui_char appName[] = GUI_TEXT("Sc1") TITLE_PLATFORM TITLE_CONFIG;
+#else
+const GUI::gui_char appName[] = GUI_TEXT("SciTE") TITLE_PLATFORM TITLE_CONFIG;
 #endif
 
 static GUI::gui_string GetErrorMessage(DWORD nRet) {
