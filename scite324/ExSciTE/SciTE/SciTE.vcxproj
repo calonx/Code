@@ -70,7 +70,7 @@
     <TargetName>$(ProjectName)d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>$(ProjectName)</TargetName>
+    <TargetName>$(ProjectName)_d</TargetName>
     <OutDir>$(SolutionDir)\bin\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Configuration)_$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
@@ -149,7 +149,6 @@
       <AdditionalIncludeDirectories>..\..\scite\src</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
-
   <ItemGroup>
     <None Include="..\..\scite\src\abaqus.properties" />
     <None Include="..\..\scite\src\abbrev.properties" />

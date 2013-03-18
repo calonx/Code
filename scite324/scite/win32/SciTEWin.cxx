@@ -54,6 +54,8 @@
 
 #ifdef STATIC_BUILD
 const GUI::gui_char appName[] = GUI_TEXT("Sc1");
+#elif _DEBUG
+const GUI::gui_char appName[] = GUI_TEXT("SciTE [Debug]");
 #else
 const GUI::gui_char appName[] = GUI_TEXT("SciTE");
 #endif
@@ -3877,7 +3879,11 @@ int PASCAL WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
 	Scintilla_RegisterClasses(hInstance);
 #else
 
+#if _DEBUG
+	HMODULE hmod = ::LoadLibrary(TEXT("SciLexer_d.DLL"));
+#else
 	HMODULE hmod = ::LoadLibrary(TEXT("SciLexer.DLL"));
+#endif
 	if (hmod == NULL)
 		::MessageBox(NULL, TEXT("The Scintilla DLL could not be loaded.  SciTE will now close"),
 			TEXT("Error loading Scintilla"), MB_OK | MB_ICONERROR);
