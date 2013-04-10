@@ -11,6 +11,8 @@
 #ifndef SCINTILLA_H
 #define SCINTILLA_H
 
+#define SCI_LEXER
+
 #ifdef __cplusplus
 extern "C" {
 #endif
