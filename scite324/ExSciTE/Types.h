@@ -1,20 +1,49 @@
-struct Vec2f {
-    float x;
-    float y;
 
-    inline Vec2f () { }
+//==============================================================================
+// Typedefs
+//==============================================================================
+
+
+typedef char                s8;
+typedef short               s16;
+typedef int                 s32;
+typedef __int64             s64;
+
+typedef unsigned char       u8;
+typedef unsigned short      u16;
+typedef unsigned int        u32;
+typedef unsigned __int64    u64;
+
+typedef float               f32;
+typedef double              f64;
+
+typedef wchar_t             wchar;
+
+
+//==============================================================================
+// Vec2f
+//==============================================================================
+
+struct Vec2f {
+    f32 x;
+    f32 y;
+
+    inline Vec2f () {
+        this->x = 0;
+        this->y = 0;
+    }
 
     inline Vec2f (const Vec2f & rhs) {
         this->x = rhs.x;
         this->y = rhs.y;
     }
 
-    inline Vec2f (float x, float y) {
+    inline Vec2f (f32 x, f32 y) {
         this->x = x;
         this->y = y;
     };
 
-    inline Vec2f (float v) {
+    inline Vec2f (f32 v) {
         this->x = v;
         this->y = v;
     };
@@ -49,25 +78,25 @@ struct Vec2f {
         return *this;
     }
 
-    inline const Vec2f & operator += (float s) {
+    inline const Vec2f & operator += (f32 s) {
         this->x += s;
         this->y += s;
         return *this;
     }
 
-    inline const Vec2f & operator -= (float s) {
+    inline const Vec2f & operator -= (f32 s) {
         this->x -= s;
         this->y -= s;
         return *this;
     }
 
-    inline const Vec2f & operator *= (float s) {
+    inline const Vec2f & operator *= (f32 s) {
         this->x *= s;
         this->y *= s;
         return *this;
     }
 
-    inline const Vec2f & operator /= (float s) {
+    inline const Vec2f & operator /= (f32 s) {
         this->x /= s;
         this->y /= s;
         return *this;
@@ -90,29 +119,38 @@ inline static Vec2f operator / (const Vec2f & lhs, const Vec2f & rhs) {
     return Vec2f(lhs.x / rhs.x, lhs.y / rhs.y);
 }
 
-inline static Vec2f operator + (const Vec2f & lhs, float s) {
+inline static Vec2f operator + (const Vec2f & lhs, f32 s) {
     return Vec2f(lhs.x + s, lhs.y + s);
 }
 
-inline static Vec2f operator - (const Vec2f & lhs, float s) {
+inline static Vec2f operator - (const Vec2f & lhs, f32 s) {
     return Vec2f(lhs.x - s, lhs.y - s);
 }
 
-inline static Vec2f operator * (const Vec2f & lhs, float s) {
+inline static Vec2f operator * (const Vec2f & lhs, f32 s) {
     return Vec2f(lhs.x * s, lhs.y * s);
 }
 
-inline static Vec2f operator / (const Vec2f & lhs, float s) {
+inline static Vec2f operator / (const Vec2f & lhs, f32 s) {
     return Vec2f(lhs.x / s, lhs.y / s);
 }
 
 
-struct Vec3f {
-    float x;
-    float y;
-    float z;
 
-    inline Vec3f () { }
+//==============================================================================
+// Vec3f
+//==============================================================================
+
+struct Vec3f {
+    f32 x;
+    f32 y;
+    f32 z;
+
+    inline Vec3f () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+    }
 
     inline Vec3f (const Vec3f & rhs) {
         this->x = rhs.x;
@@ -120,13 +158,13 @@ struct Vec3f {
         this->z = rhs.z;
     }
 
-    inline Vec3f (float x, float y, float z) {
+    inline Vec3f (f32 x, f32 y, f32 z) {
         this->x = x;
         this->y = y;
         this->z = z;
     };
 
-    inline Vec3f (float v) {
+    inline Vec3f (f32 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -167,28 +205,28 @@ struct Vec3f {
         return *this;
     }
 
-    inline const Vec3f & operator += (float s) {
+    inline const Vec3f & operator += (f32 s) {
         this->x += s;
         this->y += s;
         this->z += s;
         return *this;
     }
 
-    inline const Vec3f & operator -= (float s) {
+    inline const Vec3f & operator -= (f32 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
         return *this;
     }
 
-    inline const Vec3f & operator *= (float s) {
+    inline const Vec3f & operator *= (f32 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
         return *this;
     }
 
-    inline const Vec3f & operator /= (float s) {
+    inline const Vec3f & operator /= (f32 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -212,30 +250,40 @@ inline static Vec3f operator / (const Vec3f & lhs, const Vec3f & rhs) {
     return Vec3f(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
 }
 
-inline static Vec3f operator + (const Vec3f & lhs, float s) {
+inline static Vec3f operator + (const Vec3f & lhs, f32 s) {
     return Vec3f(lhs.x + s, lhs.y + s, lhs.z + s);
 }
 
-inline static Vec3f operator - (const Vec3f & lhs, float s) {
+inline static Vec3f operator - (const Vec3f & lhs, f32 s) {
     return Vec3f(lhs.x - s, lhs.y - s, lhs.z - s);
 }
 
-inline static Vec3f operator * (const Vec3f & lhs, float s) {
+inline static Vec3f operator * (const Vec3f & lhs, f32 s) {
     return Vec3f(lhs.x * s, lhs.y * s, lhs.z * s);
 }
 
-inline static Vec3f operator / (const Vec3f & lhs, float s) {
+inline static Vec3f operator / (const Vec3f & lhs, f32 s) {
     return Vec3f(lhs.x / s, lhs.y / s, lhs.z / s);
 }
 
 
-struct Vec4f {
-    float x;
-    float y;
-    float z;
-    float w;
 
-    inline Vec4f () { }
+//==============================================================================
+// Vec4f
+//==============================================================================
+
+struct Vec4f {
+    f32 x;
+    f32 y;
+    f32 z;
+    f32 w;
+
+    inline Vec4f () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+        this->w = 0;
+    }
 
     inline Vec4f (const Vec4f & rhs) {
         this->x = rhs.x;
@@ -244,14 +292,14 @@ struct Vec4f {
         this->w = rhs.w;
     }
 
-    inline Vec4f (float x, float y, float z, float w) {
+    inline Vec4f (f32 x, f32 y, f32 z, f32 w) {
         this->x = x;
         this->y = y;
         this->z = z;
         this->w = w;
     };
 
-    inline Vec4f (float v) {
+    inline Vec4f (f32 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -298,7 +346,7 @@ struct Vec4f {
         return *this;
     }
 
-    inline const Vec4f & operator += (float s) {
+    inline const Vec4f & operator += (f32 s) {
         this->x += s;
         this->y += s;
         this->z += s;
@@ -306,7 +354,7 @@ struct Vec4f {
         return *this;
     }
 
-    inline const Vec4f & operator -= (float s) {
+    inline const Vec4f & operator -= (f32 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
@@ -314,7 +362,7 @@ struct Vec4f {
         return *this;
     }
 
-    inline const Vec4f & operator *= (float s) {
+    inline const Vec4f & operator *= (f32 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
@@ -322,7 +370,7 @@ struct Vec4f {
         return *this;
     }
 
-    inline const Vec4f & operator /= (float s) {
+    inline const Vec4f & operator /= (f32 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -347,40 +395,48 @@ inline static Vec4f operator / (const Vec4f & lhs, const Vec4f & rhs) {
     return Vec4f(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
 }
 
-inline static Vec4f operator + (const Vec4f & lhs, float s) {
+inline static Vec4f operator + (const Vec4f & lhs, f32 s) {
     return Vec4f(lhs.x + s, lhs.y + s, lhs.z + s, lhs.w + s);
 }
 
-inline static Vec4f operator - (const Vec4f & lhs, float s) {
+inline static Vec4f operator - (const Vec4f & lhs, f32 s) {
     return Vec4f(lhs.x - s, lhs.y - s, lhs.z - s, lhs.w - s);
 }
 
-inline static Vec4f operator * (const Vec4f & lhs, float s) {
+inline static Vec4f operator * (const Vec4f & lhs, f32 s) {
     return Vec4f(lhs.x * s, lhs.y * s, lhs.z * s, lhs.w * s);
 }
 
-inline static Vec4f operator / (const Vec4f & lhs, float s) {
+inline static Vec4f operator / (const Vec4f & lhs, f32 s) {
     return Vec4f(lhs.x / s, lhs.y / s, lhs.z / s, lhs.w / s);
 }
 
 
-struct Vec2d {
-    double x;
-    double y;
 
-    inline Vec2d () { }
+//==============================================================================
+// Vec2d
+//==============================================================================
+
+struct Vec2d {
+    f64 x;
+    f64 y;
+
+    inline Vec2d () {
+        this->x = 0;
+        this->y = 0;
+    }
 
     inline Vec2d (const Vec2d & rhs) {
         this->x = rhs.x;
         this->y = rhs.y;
     }
 
-    inline Vec2d (double x, double y) {
+    inline Vec2d (f64 x, f64 y) {
         this->x = x;
         this->y = y;
     };
 
-    inline Vec2d (double v) {
+    inline Vec2d (f64 v) {
         this->x = v;
         this->y = v;
     };
@@ -415,25 +471,25 @@ struct Vec2d {
         return *this;
     }
 
-    inline const Vec2d & operator += (double s) {
+    inline const Vec2d & operator += (f64 s) {
         this->x += s;
         this->y += s;
         return *this;
     }
 
-    inline const Vec2d & operator -= (double s) {
+    inline const Vec2d & operator -= (f64 s) {
         this->x -= s;
         this->y -= s;
         return *this;
     }
 
-    inline const Vec2d & operator *= (double s) {
+    inline const Vec2d & operator *= (f64 s) {
         this->x *= s;
         this->y *= s;
         return *this;
     }
 
-    inline const Vec2d & operator /= (double s) {
+    inline const Vec2d & operator /= (f64 s) {
         this->x /= s;
         this->y /= s;
         return *this;
@@ -456,29 +512,38 @@ inline static Vec2d operator / (const Vec2d & lhs, const Vec2d & rhs) {
     return Vec2d(lhs.x / rhs.x, lhs.y / rhs.y);
 }
 
-inline static Vec2d operator + (const Vec2d & lhs, double s) {
+inline static Vec2d operator + (const Vec2d & lhs, f64 s) {
     return Vec2d(lhs.x + s, lhs.y + s);
 }
 
-inline static Vec2d operator - (const Vec2d & lhs, double s) {
+inline static Vec2d operator - (const Vec2d & lhs, f64 s) {
     return Vec2d(lhs.x - s, lhs.y - s);
 }
 
-inline static Vec2d operator * (const Vec2d & lhs, double s) {
+inline static Vec2d operator * (const Vec2d & lhs, f64 s) {
     return Vec2d(lhs.x * s, lhs.y * s);
 }
 
-inline static Vec2d operator / (const Vec2d & lhs, double s) {
+inline static Vec2d operator / (const Vec2d & lhs, f64 s) {
     return Vec2d(lhs.x / s, lhs.y / s);
 }
 
 
-struct Vec3d {
-    double x;
-    double y;
-    double z;
 
-    inline Vec3d () { }
+//==============================================================================
+// Vec3d
+//==============================================================================
+
+struct Vec3d {
+    f64 x;
+    f64 y;
+    f64 z;
+
+    inline Vec3d () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+    }
 
     inline Vec3d (const Vec3d & rhs) {
         this->x = rhs.x;
@@ -486,13 +551,13 @@ struct Vec3d {
         this->z = rhs.z;
     }
 
-    inline Vec3d (double x, double y, double z) {
+    inline Vec3d (f64 x, f64 y, f64 z) {
         this->x = x;
         this->y = y;
         this->z = z;
     };
 
-    inline Vec3d (double v) {
+    inline Vec3d (f64 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -533,28 +598,28 @@ struct Vec3d {
         return *this;
     }
 
-    inline const Vec3d & operator += (double s) {
+    inline const Vec3d & operator += (f64 s) {
         this->x += s;
         this->y += s;
         this->z += s;
         return *this;
     }
 
-    inline const Vec3d & operator -= (double s) {
+    inline const Vec3d & operator -= (f64 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
         return *this;
     }
 
-    inline const Vec3d & operator *= (double s) {
+    inline const Vec3d & operator *= (f64 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
         return *this;
     }
 
-    inline const Vec3d & operator /= (double s) {
+    inline const Vec3d & operator /= (f64 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -578,30 +643,40 @@ inline static Vec3d operator / (const Vec3d & lhs, const Vec3d & rhs) {
     return Vec3d(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
 }
 
-inline static Vec3d operator + (const Vec3d & lhs, double s) {
+inline static Vec3d operator + (const Vec3d & lhs, f64 s) {
     return Vec3d(lhs.x + s, lhs.y + s, lhs.z + s);
 }
 
-inline static Vec3d operator - (const Vec3d & lhs, double s) {
+inline static Vec3d operator - (const Vec3d & lhs, f64 s) {
     return Vec3d(lhs.x - s, lhs.y - s, lhs.z - s);
 }
 
-inline static Vec3d operator * (const Vec3d & lhs, double s) {
+inline static Vec3d operator * (const Vec3d & lhs, f64 s) {
     return Vec3d(lhs.x * s, lhs.y * s, lhs.z * s);
 }
 
-inline static Vec3d operator / (const Vec3d & lhs, double s) {
+inline static Vec3d operator / (const Vec3d & lhs, f64 s) {
     return Vec3d(lhs.x / s, lhs.y / s, lhs.z / s);
 }
 
 
-struct Vec4d {
-    double x;
-    double y;
-    double z;
-    double w;
 
-    inline Vec4d () { }
+//==============================================================================
+// Vec4d
+//==============================================================================
+
+struct Vec4d {
+    f64 x;
+    f64 y;
+    f64 z;
+    f64 w;
+
+    inline Vec4d () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+        this->w = 0;
+    }
 
     inline Vec4d (const Vec4d & rhs) {
         this->x = rhs.x;
@@ -610,14 +685,14 @@ struct Vec4d {
         this->w = rhs.w;
     }
 
-    inline Vec4d (double x, double y, double z, double w) {
+    inline Vec4d (f64 x, f64 y, f64 z, f64 w) {
         this->x = x;
         this->y = y;
         this->z = z;
         this->w = w;
     };
 
-    inline Vec4d (double v) {
+    inline Vec4d (f64 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -664,7 +739,7 @@ struct Vec4d {
         return *this;
     }
 
-    inline const Vec4d & operator += (double s) {
+    inline const Vec4d & operator += (f64 s) {
         this->x += s;
         this->y += s;
         this->z += s;
@@ -672,7 +747,7 @@ struct Vec4d {
         return *this;
     }
 
-    inline const Vec4d & operator -= (double s) {
+    inline const Vec4d & operator -= (f64 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
@@ -680,7 +755,7 @@ struct Vec4d {
         return *this;
     }
 
-    inline const Vec4d & operator *= (double s) {
+    inline const Vec4d & operator *= (f64 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
@@ -688,7 +763,7 @@ struct Vec4d {
         return *this;
     }
 
-    inline const Vec4d & operator /= (double s) {
+    inline const Vec4d & operator /= (f64 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -713,40 +788,48 @@ inline static Vec4d operator / (const Vec4d & lhs, const Vec4d & rhs) {
     return Vec4d(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
 }
 
-inline static Vec4d operator + (const Vec4d & lhs, double s) {
+inline static Vec4d operator + (const Vec4d & lhs, f64 s) {
     return Vec4d(lhs.x + s, lhs.y + s, lhs.z + s, lhs.w + s);
 }
 
-inline static Vec4d operator - (const Vec4d & lhs, double s) {
+inline static Vec4d operator - (const Vec4d & lhs, f64 s) {
     return Vec4d(lhs.x - s, lhs.y - s, lhs.z - s, lhs.w - s);
 }
 
-inline static Vec4d operator * (const Vec4d & lhs, double s) {
+inline static Vec4d operator * (const Vec4d & lhs, f64 s) {
     return Vec4d(lhs.x * s, lhs.y * s, lhs.z * s, lhs.w * s);
 }
 
-inline static Vec4d operator / (const Vec4d & lhs, double s) {
+inline static Vec4d operator / (const Vec4d & lhs, f64 s) {
     return Vec4d(lhs.x / s, lhs.y / s, lhs.z / s, lhs.w / s);
 }
 
 
-struct Vec2i {
-    int x;
-    int y;
 
-    inline Vec2i () { }
+//==============================================================================
+// Vec2i
+//==============================================================================
+
+struct Vec2i {
+    s32 x;
+    s32 y;
+
+    inline Vec2i () {
+        this->x = 0;
+        this->y = 0;
+    }
 
     inline Vec2i (const Vec2i & rhs) {
         this->x = rhs.x;
         this->y = rhs.y;
     }
 
-    inline Vec2i (int x, int y) {
+    inline Vec2i (s32 x, s32 y) {
         this->x = x;
         this->y = y;
     };
 
-    inline Vec2i (int v) {
+    inline Vec2i (s32 v) {
         this->x = v;
         this->y = v;
     };
@@ -781,25 +864,25 @@ struct Vec2i {
         return *this;
     }
 
-    inline const Vec2i & operator += (int s) {
+    inline const Vec2i & operator += (s32 s) {
         this->x += s;
         this->y += s;
         return *this;
     }
 
-    inline const Vec2i & operator -= (int s) {
+    inline const Vec2i & operator -= (s32 s) {
         this->x -= s;
         this->y -= s;
         return *this;
     }
 
-    inline const Vec2i & operator *= (int s) {
+    inline const Vec2i & operator *= (s32 s) {
         this->x *= s;
         this->y *= s;
         return *this;
     }
 
-    inline const Vec2i & operator /= (int s) {
+    inline const Vec2i & operator /= (s32 s) {
         this->x /= s;
         this->y /= s;
         return *this;
@@ -822,29 +905,38 @@ inline static Vec2i operator / (const Vec2i & lhs, const Vec2i & rhs) {
     return Vec2i(lhs.x / rhs.x, lhs.y / rhs.y);
 }
 
-inline static Vec2i operator + (const Vec2i & lhs, int s) {
+inline static Vec2i operator + (const Vec2i & lhs, s32 s) {
     return Vec2i(lhs.x + s, lhs.y + s);
 }
 
-inline static Vec2i operator - (const Vec2i & lhs, int s) {
+inline static Vec2i operator - (const Vec2i & lhs, s32 s) {
     return Vec2i(lhs.x - s, lhs.y - s);
 }
 
-inline static Vec2i operator * (const Vec2i & lhs, int s) {
+inline static Vec2i operator * (const Vec2i & lhs, s32 s) {
     return Vec2i(lhs.x * s, lhs.y * s);
 }
 
-inline static Vec2i operator / (const Vec2i & lhs, int s) {
+inline static Vec2i operator / (const Vec2i & lhs, s32 s) {
     return Vec2i(lhs.x / s, lhs.y / s);
 }
 
 
-struct Vec3i {
-    int x;
-    int y;
-    int z;
 
-    inline Vec3i () { }
+//==============================================================================
+// Vec3i
+//==============================================================================
+
+struct Vec3i {
+    s32 x;
+    s32 y;
+    s32 z;
+
+    inline Vec3i () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+    }
 
     inline Vec3i (const Vec3i & rhs) {
         this->x = rhs.x;
@@ -852,13 +944,13 @@ struct Vec3i {
         this->z = rhs.z;
     }
 
-    inline Vec3i (int x, int y, int z) {
+    inline Vec3i (s32 x, s32 y, s32 z) {
         this->x = x;
         this->y = y;
         this->z = z;
     };
 
-    inline Vec3i (int v) {
+    inline Vec3i (s32 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -899,28 +991,28 @@ struct Vec3i {
         return *this;
     }
 
-    inline const Vec3i & operator += (int s) {
+    inline const Vec3i & operator += (s32 s) {
         this->x += s;
         this->y += s;
         this->z += s;
         return *this;
     }
 
-    inline const Vec3i & operator -= (int s) {
+    inline const Vec3i & operator -= (s32 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
         return *this;
     }
 
-    inline const Vec3i & operator *= (int s) {
+    inline const Vec3i & operator *= (s32 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
         return *this;
     }
 
-    inline const Vec3i & operator /= (int s) {
+    inline const Vec3i & operator /= (s32 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -944,30 +1036,40 @@ inline static Vec3i operator / (const Vec3i & lhs, const Vec3i & rhs) {
     return Vec3i(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
 }
 
-inline static Vec3i operator + (const Vec3i & lhs, int s) {
+inline static Vec3i operator + (const Vec3i & lhs, s32 s) {
     return Vec3i(lhs.x + s, lhs.y + s, lhs.z + s);
 }
 
-inline static Vec3i operator - (const Vec3i & lhs, int s) {
+inline static Vec3i operator - (const Vec3i & lhs, s32 s) {
     return Vec3i(lhs.x - s, lhs.y - s, lhs.z - s);
 }
 
-inline static Vec3i operator * (const Vec3i & lhs, int s) {
+inline static Vec3i operator * (const Vec3i & lhs, s32 s) {
     return Vec3i(lhs.x * s, lhs.y * s, lhs.z * s);
 }
 
-inline static Vec3i operator / (const Vec3i & lhs, int s) {
+inline static Vec3i operator / (const Vec3i & lhs, s32 s) {
     return Vec3i(lhs.x / s, lhs.y / s, lhs.z / s);
 }
 
 
-struct Vec4i {
-    int x;
-    int y;
-    int z;
-    int w;
 
-    inline Vec4i () { }
+//==============================================================================
+// Vec4i
+//==============================================================================
+
+struct Vec4i {
+    s32 x;
+    s32 y;
+    s32 z;
+    s32 w;
+
+    inline Vec4i () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+        this->w = 0;
+    }
 
     inline Vec4i (const Vec4i & rhs) {
         this->x = rhs.x;
@@ -976,14 +1078,14 @@ struct Vec4i {
         this->w = rhs.w;
     }
 
-    inline Vec4i (int x, int y, int z, int w) {
+    inline Vec4i (s32 x, s32 y, s32 z, s32 w) {
         this->x = x;
         this->y = y;
         this->z = z;
         this->w = w;
     };
 
-    inline Vec4i (int v) {
+    inline Vec4i (s32 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -1030,7 +1132,7 @@ struct Vec4i {
         return *this;
     }
 
-    inline const Vec4i & operator += (int s) {
+    inline const Vec4i & operator += (s32 s) {
         this->x += s;
         this->y += s;
         this->z += s;
@@ -1038,7 +1140,7 @@ struct Vec4i {
         return *this;
     }
 
-    inline const Vec4i & operator -= (int s) {
+    inline const Vec4i & operator -= (s32 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
@@ -1046,7 +1148,7 @@ struct Vec4i {
         return *this;
     }
 
-    inline const Vec4i & operator *= (int s) {
+    inline const Vec4i & operator *= (s32 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
@@ -1054,7 +1156,7 @@ struct Vec4i {
         return *this;
     }
 
-    inline const Vec4i & operator /= (int s) {
+    inline const Vec4i & operator /= (s32 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -1079,40 +1181,48 @@ inline static Vec4i operator / (const Vec4i & lhs, const Vec4i & rhs) {
     return Vec4i(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
 }
 
-inline static Vec4i operator + (const Vec4i & lhs, int s) {
+inline static Vec4i operator + (const Vec4i & lhs, s32 s) {
     return Vec4i(lhs.x + s, lhs.y + s, lhs.z + s, lhs.w + s);
 }
 
-inline static Vec4i operator - (const Vec4i & lhs, int s) {
+inline static Vec4i operator - (const Vec4i & lhs, s32 s) {
     return Vec4i(lhs.x - s, lhs.y - s, lhs.z - s, lhs.w - s);
 }
 
-inline static Vec4i operator * (const Vec4i & lhs, int s) {
+inline static Vec4i operator * (const Vec4i & lhs, s32 s) {
     return Vec4i(lhs.x * s, lhs.y * s, lhs.z * s, lhs.w * s);
 }
 
-inline static Vec4i operator / (const Vec4i & lhs, int s) {
+inline static Vec4i operator / (const Vec4i & lhs, s32 s) {
     return Vec4i(lhs.x / s, lhs.y / s, lhs.z / s, lhs.w / s);
 }
 
 
-struct Vec2u {
-    unsigned x;
-    unsigned y;
 
-    inline Vec2u () { }
+//==============================================================================
+// Vec2u
+//==============================================================================
+
+struct Vec2u {
+    u32 x;
+    u32 y;
+
+    inline Vec2u () {
+        this->x = 0;
+        this->y = 0;
+    }
 
     inline Vec2u (const Vec2u & rhs) {
         this->x = rhs.x;
         this->y = rhs.y;
     }
 
-    inline Vec2u (unsigned x, unsigned y) {
+    inline Vec2u (u32 x, u32 y) {
         this->x = x;
         this->y = y;
     };
 
-    inline Vec2u (unsigned v) {
+    inline Vec2u (u32 v) {
         this->x = v;
         this->y = v;
     };
@@ -1147,25 +1257,25 @@ struct Vec2u {
         return *this;
     }
 
-    inline const Vec2u & operator += (unsigned s) {
+    inline const Vec2u & operator += (u32 s) {
         this->x += s;
         this->y += s;
         return *this;
     }
 
-    inline const Vec2u & operator -= (unsigned s) {
+    inline const Vec2u & operator -= (u32 s) {
         this->x -= s;
         this->y -= s;
         return *this;
     }
 
-    inline const Vec2u & operator *= (unsigned s) {
+    inline const Vec2u & operator *= (u32 s) {
         this->x *= s;
         this->y *= s;
         return *this;
     }
 
-    inline const Vec2u & operator /= (unsigned s) {
+    inline const Vec2u & operator /= (u32 s) {
         this->x /= s;
         this->y /= s;
         return *this;
@@ -1188,29 +1298,38 @@ inline static Vec2u operator / (const Vec2u & lhs, const Vec2u & rhs) {
     return Vec2u(lhs.x / rhs.x, lhs.y / rhs.y);
 }
 
-inline static Vec2u operator + (const Vec2u & lhs, unsigned s) {
+inline static Vec2u operator + (const Vec2u & lhs, u32 s) {
     return Vec2u(lhs.x + s, lhs.y + s);
 }
 
-inline static Vec2u operator - (const Vec2u & lhs, unsigned s) {
+inline static Vec2u operator - (const Vec2u & lhs, u32 s) {
     return Vec2u(lhs.x - s, lhs.y - s);
 }
 
-inline static Vec2u operator * (const Vec2u & lhs, unsigned s) {
+inline static Vec2u operator * (const Vec2u & lhs, u32 s) {
     return Vec2u(lhs.x * s, lhs.y * s);
 }
 
-inline static Vec2u operator / (const Vec2u & lhs, unsigned s) {
+inline static Vec2u operator / (const Vec2u & lhs, u32 s) {
     return Vec2u(lhs.x / s, lhs.y / s);
 }
 
 
-struct Vec3u {
-    unsigned x;
-    unsigned y;
-    unsigned z;
 
-    inline Vec3u () { }
+//==============================================================================
+// Vec3u
+//==============================================================================
+
+struct Vec3u {
+    u32 x;
+    u32 y;
+    u32 z;
+
+    inline Vec3u () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+    }
 
     inline Vec3u (const Vec3u & rhs) {
         this->x = rhs.x;
@@ -1218,13 +1337,13 @@ struct Vec3u {
         this->z = rhs.z;
     }
 
-    inline Vec3u (unsigned x, unsigned y, unsigned z) {
+    inline Vec3u (u32 x, u32 y, u32 z) {
         this->x = x;
         this->y = y;
         this->z = z;
     };
 
-    inline Vec3u (unsigned v) {
+    inline Vec3u (u32 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -1265,28 +1384,28 @@ struct Vec3u {
         return *this;
     }
 
-    inline const Vec3u & operator += (unsigned s) {
+    inline const Vec3u & operator += (u32 s) {
         this->x += s;
         this->y += s;
         this->z += s;
         return *this;
     }
 
-    inline const Vec3u & operator -= (unsigned s) {
+    inline const Vec3u & operator -= (u32 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
         return *this;
     }
 
-    inline const Vec3u & operator *= (unsigned s) {
+    inline const Vec3u & operator *= (u32 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
         return *this;
     }
 
-    inline const Vec3u & operator /= (unsigned s) {
+    inline const Vec3u & operator /= (u32 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -1310,30 +1429,40 @@ inline static Vec3u operator / (const Vec3u & lhs, const Vec3u & rhs) {
     return Vec3u(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
 }
 
-inline static Vec3u operator + (const Vec3u & lhs, unsigned s) {
+inline static Vec3u operator + (const Vec3u & lhs, u32 s) {
     return Vec3u(lhs.x + s, lhs.y + s, lhs.z + s);
 }
 
-inline static Vec3u operator - (const Vec3u & lhs, unsigned s) {
+inline static Vec3u operator - (const Vec3u & lhs, u32 s) {
     return Vec3u(lhs.x - s, lhs.y - s, lhs.z - s);
 }
 
-inline static Vec3u operator * (const Vec3u & lhs, unsigned s) {
+inline static Vec3u operator * (const Vec3u & lhs, u32 s) {
     return Vec3u(lhs.x * s, lhs.y * s, lhs.z * s);
 }
 
-inline static Vec3u operator / (const Vec3u & lhs, unsigned s) {
+inline static Vec3u operator / (const Vec3u & lhs, u32 s) {
     return Vec3u(lhs.x / s, lhs.y / s, lhs.z / s);
 }
 
 
-struct Vec4u {
-    unsigned x;
-    unsigned y;
-    unsigned z;
-    unsigned w;
 
-    inline Vec4u () { }
+//==============================================================================
+// Vec4u
+//==============================================================================
+
+struct Vec4u {
+    u32 x;
+    u32 y;
+    u32 z;
+    u32 w;
+
+    inline Vec4u () {
+        this->x = 0;
+        this->y = 0;
+        this->z = 0;
+        this->w = 0;
+    }
 
     inline Vec4u (const Vec4u & rhs) {
         this->x = rhs.x;
@@ -1342,14 +1471,14 @@ struct Vec4u {
         this->w = rhs.w;
     }
 
-    inline Vec4u (unsigned x, unsigned y, unsigned z, unsigned w) {
+    inline Vec4u (u32 x, u32 y, u32 z, u32 w) {
         this->x = x;
         this->y = y;
         this->z = z;
         this->w = w;
     };
 
-    inline Vec4u (unsigned v) {
+    inline Vec4u (u32 v) {
         this->x = v;
         this->y = v;
         this->z = v;
@@ -1396,7 +1525,7 @@ struct Vec4u {
         return *this;
     }
 
-    inline const Vec4u & operator += (unsigned s) {
+    inline const Vec4u & operator += (u32 s) {
         this->x += s;
         this->y += s;
         this->z += s;
@@ -1404,7 +1533,7 @@ struct Vec4u {
         return *this;
     }
 
-    inline const Vec4u & operator -= (unsigned s) {
+    inline const Vec4u & operator -= (u32 s) {
         this->x -= s;
         this->y -= s;
         this->z -= s;
@@ -1412,7 +1541,7 @@ struct Vec4u {
         return *this;
     }
 
-    inline const Vec4u & operator *= (unsigned s) {
+    inline const Vec4u & operator *= (u32 s) {
         this->x *= s;
         this->y *= s;
         this->z *= s;
@@ -1420,7 +1549,7 @@ struct Vec4u {
         return *this;
     }
 
-    inline const Vec4u & operator /= (unsigned s) {
+    inline const Vec4u & operator /= (u32 s) {
         this->x /= s;
         this->y /= s;
         this->z /= s;
@@ -1445,30 +1574,40 @@ inline static Vec4u operator / (const Vec4u & lhs, const Vec4u & rhs) {
     return Vec4u(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
 }
 
-inline static Vec4u operator + (const Vec4u & lhs, unsigned s) {
+inline static Vec4u operator + (const Vec4u & lhs, u32 s) {
     return Vec4u(lhs.x + s, lhs.y + s, lhs.z + s, lhs.w + s);
 }
 
-inline static Vec4u operator - (const Vec4u & lhs, unsigned s) {
+inline static Vec4u operator - (const Vec4u & lhs, u32 s) {
     return Vec4u(lhs.x - s, lhs.y - s, lhs.z - s, lhs.w - s);
 }
 
-inline static Vec4u operator * (const Vec4u & lhs, unsigned s) {
+inline static Vec4u operator * (const Vec4u & lhs, u32 s) {
     return Vec4u(lhs.x * s, lhs.y * s, lhs.z * s, lhs.w * s);
 }
 
-inline static Vec4u operator / (const Vec4u & lhs, unsigned s) {
+inline static Vec4u operator / (const Vec4u & lhs, u32 s) {
     return Vec4u(lhs.x / s, lhs.y / s, lhs.z / s, lhs.w / s);
 }
 
 
-struct Color4f {
-    float r;
-    float g;
-    float b;
-    float a;
 
-    inline Color4f () { }
+//==============================================================================
+// Color4f
+//==============================================================================
+
+struct Color4f {
+    f32 r;
+    f32 g;
+    f32 b;
+    f32 a;
+
+    inline Color4f () {
+        this->r = 0;
+        this->g = 0;
+        this->b = 0;
+        this->a = 0;
+    }
 
     inline Color4f (const Color4f & rhs) {
         this->r = rhs.r;
@@ -1477,14 +1616,14 @@ struct Color4f {
         this->a = rhs.a;
     }
 
-    inline Color4f (float r, float g, float b, float a) {
+    inline Color4f (f32 r, f32 g, f32 b, f32 a) {
         this->r = r;
         this->g = g;
         this->b = b;
         this->a = a;
     };
 
-    inline Color4f (float v) {
+    inline Color4f (f32 v) {
         this->r = v;
         this->g = v;
         this->b = v;
@@ -1531,7 +1670,7 @@ struct Color4f {
         return *this;
     }
 
-    inline const Color4f & operator += (float s) {
+    inline const Color4f & operator += (f32 s) {
         this->r += s;
         this->g += s;
         this->b += s;
@@ -1539,7 +1678,7 @@ struct Color4f {
         return *this;
     }
 
-    inline const Color4f & operator -= (float s) {
+    inline const Color4f & operator -= (f32 s) {
         this->r -= s;
         this->g -= s;
         this->b -= s;
@@ -1547,7 +1686,7 @@ struct Color4f {
         return *this;
     }
 
-    inline const Color4f & operator *= (float s) {
+    inline const Color4f & operator *= (f32 s) {
         this->r *= s;
         this->g *= s;
         this->b *= s;
@@ -1555,7 +1694,7 @@ struct Color4f {
         return *this;
     }
 
-    inline const Color4f & operator /= (float s) {
+    inline const Color4f & operator /= (f32 s) {
         this->r /= s;
         this->g /= s;
         this->b /= s;
@@ -1580,30 +1719,40 @@ inline static Color4f operator / (const Color4f & lhs, const Color4f & rhs) {
     return Color4f(lhs.r / rhs.r, lhs.g / rhs.g, lhs.b / rhs.b, lhs.a / rhs.a);
 }
 
-inline static Color4f operator + (const Color4f & lhs, float s) {
+inline static Color4f operator + (const Color4f & lhs, f32 s) {
     return Color4f(lhs.r + s, lhs.g + s, lhs.b + s, lhs.a + s);
 }
 
-inline static Color4f operator - (const Color4f & lhs, float s) {
+inline static Color4f operator - (const Color4f & lhs, f32 s) {
     return Color4f(lhs.r - s, lhs.g - s, lhs.b - s, lhs.a - s);
 }
 
-inline static Color4f operator * (const Color4f & lhs, float s) {
+inline static Color4f operator * (const Color4f & lhs, f32 s) {
     return Color4f(lhs.r * s, lhs.g * s, lhs.b * s, lhs.a * s);
 }
 
-inline static Color4f operator / (const Color4f & lhs, float s) {
+inline static Color4f operator / (const Color4f & lhs, f32 s) {
     return Color4f(lhs.r / s, lhs.g / s, lhs.b / s, lhs.a / s);
 }
 
 
-struct Color4b {
-    byte r;
-    byte g;
-    byte b;
-    byte a;
 
-    inline Color4b () { }
+//==============================================================================
+// Color4b
+//==============================================================================
+
+struct Color4b {
+    u8 r;
+    u8 g;
+    u8 b;
+    u8 a;
+
+    inline Color4b () {
+        this->r = 0;
+        this->g = 0;
+        this->b = 0;
+        this->a = 0;
+    }
 
     inline Color4b (const Color4b & rhs) {
         this->r = rhs.r;
@@ -1612,14 +1761,14 @@ struct Color4b {
         this->a = rhs.a;
     }
 
-    inline Color4b (byte r, byte g, byte b, byte a) {
+    inline Color4b (u8 r, u8 g, u8 b, u8 a) {
         this->r = r;
         this->g = g;
         this->b = b;
         this->a = a;
     };
 
-    inline Color4b (byte v) {
+    inline Color4b (u8 v) {
         this->r = v;
         this->g = v;
         this->b = v;
@@ -1666,7 +1815,7 @@ struct Color4b {
         return *this;
     }
 
-    inline const Color4b & operator += (byte s) {
+    inline const Color4b & operator += (u8 s) {
         this->r += s;
         this->g += s;
         this->b += s;
@@ -1674,7 +1823,7 @@ struct Color4b {
         return *this;
     }
 
-    inline const Color4b & operator -= (byte s) {
+    inline const Color4b & operator -= (u8 s) {
         this->r -= s;
         this->g -= s;
         this->b -= s;
@@ -1682,7 +1831,7 @@ struct Color4b {
         return *this;
     }
 
-    inline const Color4b & operator *= (byte s) {
+    inline const Color4b & operator *= (u8 s) {
         this->r *= s;
         this->g *= s;
         this->b *= s;
@@ -1690,7 +1839,7 @@ struct Color4b {
         return *this;
     }
 
-    inline const Color4b & operator /= (byte s) {
+    inline const Color4b & operator /= (u8 s) {
         this->r /= s;
         this->g /= s;
         this->b /= s;
@@ -1715,19 +1864,19 @@ inline static Color4b operator / (const Color4b & lhs, const Color4b & rhs) {
     return Color4b(lhs.r / rhs.r, lhs.g / rhs.g, lhs.b / rhs.b, lhs.a / rhs.a);
 }
 
-inline static Color4b operator + (const Color4b & lhs, byte s) {
+inline static Color4b operator + (const Color4b & lhs, u8 s) {
     return Color4b(lhs.r + s, lhs.g + s, lhs.b + s, lhs.a + s);
 }
 
-inline static Color4b operator - (const Color4b & lhs, byte s) {
+inline static Color4b operator - (const Color4b & lhs, u8 s) {
     return Color4b(lhs.r - s, lhs.g - s, lhs.b - s, lhs.a - s);
 }
 
-inline static Color4b operator * (const Color4b & lhs, byte s) {
+inline static Color4b operator * (const Color4b & lhs, u8 s) {
     return Color4b(lhs.r * s, lhs.g * s, lhs.b * s, lhs.a * s);
 }
 
-inline static Color4b operator / (const Color4b & lhs, byte s) {
+inline static Color4b operator / (const Color4b & lhs, u8 s) {
     return Color4b(lhs.r / s, lhs.g / s, lhs.b / s, lhs.a / s);
 }
 

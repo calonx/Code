@@ -1,5 +1,3 @@
-namespace Math
-{
 
 
 //==============================================================================
@@ -198,4 +196,3 @@ template<class T>
 void MathNormalize (const T & src, T * dst) {
     *dst = src / MathMagnitude(src);
 }
-} // namespace Math

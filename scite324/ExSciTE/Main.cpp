@@ -6,6 +6,7 @@
 #include <dwrite.h>
 #include <string>
 #include <cassert>
+#include <regex>
 
 #pragma comment(lib, "d2d1")
 #pragma comment(lib, "dwrite")
@@ -21,6 +22,26 @@ using namespace PCommon;
 
 const float s_dpiScaleX = 1;
 const float s_dpiScaleY = 1;
+
+enum EFontStyleFlags
+{
+    FONTSTYLE_ForeColor     = (1 << 0),
+    FONTSTYLE_BackColor     = (1 << 1),
+    FONTSTYLE_Italic        = (1 << 2),
+    FONTSTYLE_Weighted      = (1 << 3),
+    FONTSTYLE_Underline     = (1 << 4),
+    FONTSTYLE_Strikethrough = (1 << 5),
+};
+
+struct SScopedStyle
+{
+    SScopedStyle() : styleFlags(), colorFore(), colorBack(), uWeight(0.5f) { }
+
+    s32     styleFlags;
+    Color4b colorFore;
+    Color4b colorBack;
+    f32     uWeight;
+};
 
 class CWindow
 {
@@ -49,10 +70,12 @@ private:
 
     IDWriteFactory *        m_pWriteFactory;
     IDWriteTextFormat *     m_pTextFormat;
+    IDWriteTextLayout *     m_pTextLayout;
 
     ID2D1Factory *          m_pD2dFactory;
     ID2D1HwndRenderTarget * m_pRenderTarget;
     ID2D1SolidColorBrush *  m_pBlackBrush;
+    ID2D1SolidColorBrush *  m_pGrayBrush;
 };
 
 CWindow::CWindow ()
@@ -60,9 +83,11 @@ CWindow::CWindow ()
     m_strText(L"Hello,\nworld!"),
     m_pWriteFactory(nullptr),
     m_pTextFormat(nullptr),
+    m_pTextLayout(nullptr),
     m_pD2dFactory(nullptr),
     m_pRenderTarget(nullptr),
-    m_pBlackBrush(nullptr)
+    m_pBlackBrush(nullptr),
+    m_pGrayBrush(nullptr)
 {
 
 }
@@ -157,11 +182,11 @@ void CWindow::CreateTextResources ()
     );
     assert(SUCCEEDED(result));
 
-    result = m_pTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
-    assert(SUCCEEDED(result));
+    //result = m_pTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+    //assert(SUCCEEDED(result));
 
-    result = m_pTextFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
-    assert(SUCCEEDED(result));
+    //result = m_pTextFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
+    //assert(SUCCEEDED(result));
 }
 
 void CWindow::EnsureDeviceResources ()
@@ -185,6 +210,9 @@ void CWindow::EnsureDeviceResources ()
     assert(SUCCEEDED(result));
 
     result = m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Black), &m_pBlackBrush);
+    assert(SUCCEEDED(result));
+
+    result = m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Gray), &m_pGrayBrush);
     assert(SUCCEEDED(result));
 }
 
@@ -219,13 +247,41 @@ void CWindow::RenderText (const wchar * text, size_t count)
         static_cast<float>(rectClient.bottom - rectClient.top)  / s_dpiScaleY
     );
 
-    m_pRenderTarget->DrawTextW(
+    IDWriteTextLayout * pTextLayout;
+    m_pWriteFactory->CreateTextLayout(
         text,
-        (u32)count,
+        u32(count),
         m_pTextFormat,
-        rectLayout,
+        rectLayout.right,
+        rectLayout.bottom,
+        &pTextLayout
+    );
+
+    SScopedStyle style;
+    style.styleFlags = FONTSTYLE_Italic | FONTSTYLE_ForeColor;
+    style.colorFore = Color4b(128, 128, 128, 255);
+
+    std::wregex reComment(L"(//.*)$", std::regex_constants::ECMAScript | std::regex_constants::icase);
+    auto commentsBegin = std::wsregex_iterator(m_strText.begin(), m_strText.end(), reComment);
+    auto commentsEnd = std::wsregex_iterator();
+
+    for (auto i = commentsBegin; i != commentsEnd; ++i)
+    {
+        auto match = *i;
+        DWRITE_TEXT_RANGE textRangeComment = { u32(match.position()), u32(match.length()) };
+        pTextLayout->SetFontStyle(DWRITE_FONT_STYLE_ITALIC, textRangeComment);
+        pTextLayout->SetDrawingEffect(m_pGrayBrush, textRangeComment);
+    }
+
+    m_pRenderTarget->DrawTextLayout(
+        D2D1_POINT_2F(),
+        pTextLayout,
         m_pBlackBrush
     );
+
+    Release(&pTextLayout);
+
+    //m_pRenderTarget->DrawRectangle();
 }
 
 LRESULT CWindow::OnMessage (UINT msg, WPARAM wParam, LPARAM lParam)

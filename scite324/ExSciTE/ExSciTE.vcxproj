@@ -24,6 +24,8 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="dx.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Types.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{220102F6-D91A-486C-BCA6-294F2DD37036}</ProjectGuid>

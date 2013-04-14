@@ -1,0 +1,29 @@
+// Lexing
+{
+    comments:
+    {
+        match: "(//.*)$"
+        path: comment.line
+    }
+
+    operators:
+    {
+        match: "\+"
+        path: operators
+    }
+}
+
+// Styling
+{
+    default:
+    {
+        foreColor: #C0C0C0
+        backColor: #202020
+    }
+
+    comment.line:
+    {
+        foreColor: #808080
+        style: [ italic ]
+    }
+}
